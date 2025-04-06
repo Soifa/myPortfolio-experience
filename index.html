@@ -1,23 +1,347 @@
 <!DOCTYPE html>
-<style>
-  /* netnet default bg */
-  body {
-    margin: 0;
-    background-image: linear-gradient(#515199a8 2px, transparent 1px),
-      linear-gradient(90deg, #515199a8 2px, transparent 1px);
-    background-size: 50px 50px;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-  }
+<html lang="en-CA">
+  <head>
+    <meta charset="utf-8">
+    <title>Background</title>
+    <!-- FONT EMBED -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kirang+Haerang&family=Kite+One&display=swap" rel="stylesheet">
 
-  body::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient(0deg, #c76ebca8, #515199a8);
-  }
-</style>
-    
+    <style>
+      body {
+        background-color: #FFED81;
+        margin: 0;
+        font-size: 16px;
+      }
+
+      .webInfo {
+        width: 100vw;
+      }
+
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 50px;
+        gap: 50px;
+      }
+
+      .section-title {
+        padding: 50px 100px 0px 100px;
+      }
+
+      .intro {
+        flex: 2;
+        max-width: 20%;
+      }
+
+      .intro h1 {
+        font-family: "Kirang Haerang", system-ui;
+        font-size: 8em;
+        font-weight: 400;
+        font-style: normal;
+        letter-spacing: 0.25em;
+        margin-bottom: 0em;
+      }
+
+      .intro h1 span:nth-child(1) {
+        color: #FF4491;
+      }
+
+      /* pastel pink */
+      .intro h1 span:nth-child(2) {
+        color: #00A0EC;
+      }
+
+      /* blue */
+      .intro h1 span:nth-child(3) {
+        color: #52B13A;
+      }
+
+      /* green */
+      .intro h1 span:nth-child(4) {
+        color: #D4A2FF;
+      }
+
+      /* lightPurple */
+      .intro h1 span:nth-child(5) {
+        color: #FF4491;
+      }
+
+      /* pastel pink */
+      .intro h1 span:nth-child(6) {
+        color: #00A0EC;
+      }
+
+      /* blue */
+      .intro h1 span:nth-child(7) {
+        color: #FE97AC;
+      }
+
+      /* light pink */
+
+      .intro h1 span:nth-child(8) {
+        color: #00A0EC;
+      }
+
+      /* blue */
+
+      .intro h1 span:nth-child(9) {
+        color: #52B13A;
+      }
+
+      /* green */
+
+      .intro h1 span:nth-child(10) {
+        color: #FF4491;
+      }
+
+      /* pastel pink */
+
+      .intro p {
+        font-family: "Kite One", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 1.6;
+        font-size: 3em;
+        max-width: 37.5em;
+      }
+
+      .photo-wrapper {
+        flex: 1;
+        max-width: 80%;
+      }
+
+      .photo-wrapper img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .nav-bar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: #FFED81;
+        z-index: 1000;
+        /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+      }
+
+      .experience-box {
+        background-color: #FEBACB;
+        width: 300px;
+        height: 120px;
+        border-radius: 30px;
+        padding: 1em;
+        font-family: "Kite One", sans-serif;
+        font-size: 1.5em;
+        color: black;
+        transition: all 0.4s ease;
+        overflow: hidden;
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .experience-box.blue-version {
+        background-color: #B6E3FF;
+        /* blue */
+      }
+
+      .experience-box:hover {
+        height: auto;
+        width: 400px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .experience-summary {
+        text-align: center;
+      }
+
+      .experience-details {
+        opacity: 0;
+        max-height: 0;
+        transition: all 0.4s ease;
+        font-size: 0.7em;
+        margin-top: 1em;
+      }
+
+      .experience-box:hover .experience-details {
+        opacity: 1;
+        max-height: 1000px;
+      }
+
+      .experience-details ul {
+        padding-left: 1.2em;
+        list-style-type: disc;
+        margin: 0;
+      }
+
+
+      .nav-bar ul {
+        list-style-type: none;
+        overflow: hidden;
+        display: flex;
+        justify-content: right;
+        margin: 0;
+        padding: 1em 2em;
+      }
+
+      .nav-bar li {
+        float: left;
+      }
+
+      .experience-details li {
+        margin-bottom: 0.5em;
+        font-size: 1em;
+        line-height: 1.4;
+      }
+
+      .nav-bar li a {
+        position: relative;
+        display: block;
+        padding: 10px 40px;
+        text-decoration: none;
+        font-family: 'Inter', sans-serif;
+        color: #FF4491;
+        border-bottom: 4px solid #FF4491;
+        transition: border-color 0.3s ease;
+      }
+
+      .nav-bar li a:hover {
+        border-bottom: 4px solid #00A0EC;
+      }
+
+      .nav-bar li a[href="#experience"] {
+        color: #9747FF;
+        border-bottom: 4px solid #A020F0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="webInfo">
+      <!-- Navigation Bar -->
+      <div class="nav-bar">
+        <ul>
+          <li><a href="https://soifa.github.io/myPortfolio-background/">Background</a></li>
+          <li><a href="https://soifa.github.io/myPortfolio-interest/">Interest</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="https://soifa.github.io/myPortfolio-art-work/">Artwork</a></li>
+        </ul>
+      </div>
+
+      <!-- Experience Title -->
+      <div class="section-title">
+        <div class="intro">
+          <h1>
+            <span>E</span><span>x</span><span>p</span><span>e</span><span>r</span><span>i</span><span>e</span><span>n</span><span>c</span><span>e</span>
+          </h1>
+        </div>
+      </div>
+
+      <!-- Accounting -->
+      <div class="container">
+        <div class="experience-box">
+          <div class="experience-summary">
+            <p>Accounting<br>Bookkeeper</p>
+          </div>
+          <div class="experience-details">
+            <p><b>Benson Lam CPA · Sep 2021 ~ Dec 2021</b></p>
+            <ul>
+              <li>Maintained and processed invoices, deposits, and money logs.</li>
+              <li>Tracked expenses and income for business while organizing and maintaining bank statements for checking accounts.</li>
+              <li>Reconciled and corrected issues with financial records.</li>
+              <li>Answer client phone calls and assist walk-in clients.</li>
+              <li>Identified accounting errors when cross-referencing documents and database information.</li>
+              <li>Reported financial data and updated financial records in ledgers and journals.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Sun Life UX Jam -->
+        <div class="experience-box">
+          <div class="experience-summary">
+            <p>Sun Life UX<br>Design Jam</p>
+          </div>
+          <div class="experience-details">
+            <p><b>Sun Life · Oct 2024</b></p>
+            <ul>
+              <li>Collaborate with professional UX Designer in teams</li>
+              <li>Building a mature design with brainstorming, wireframe, user flow, prototype and display presentation within the limited time.</li>
+              <li>Presenting to Sunlife employees to market our design.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Rogers UX Jam -->
+        <div class="experience-box">
+          <div class="experience-summary">
+            <p>Rogers UX<br>Design Jam</p>
+          </div>
+          <div class="experience-details">
+            <p><b>Rogers Sports &amp; Media · Jan 2025</b></p>
+            <ul>
+              <li>Building a mature marketing plan with Target Audience, Value Proposition, Marketing Strategy and Competitive Advantage within the limited time.</li>
+              <li>Presenting to managers and judges from Rogers to market our proposal.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Volunteer Title -->
+      <div class="section-title">
+        <div class="intro">
+          <h1>
+            <span>V</span><span>o</span><span>l</span><span>u</span><span>n</span><span>t</span><span>e</span><span>e</span><span>r</span>
+          </h1>
+        </div>
+      </div>
+
+      <!-- Peer Leader -->
+      <div class="container">
+        <div class="experience-box blue-version">
+          <div class="experience-summary">
+            <p>Peer Leader</p>
+          </div>
+          <div class="experience-details">
+            <p><b>FMM High School · Jul 2020 - Dec 2022</b></p>
+            <ul>
+              <li>Collaborated with 10 other high school staff and students to prepare and design events for newcomers.</li>
+              <li>Helped students develop organizational, time management, and study skills.</li>
+              <li>Delivered supportive and knowledgeable counselling to students with academic or personal concerns.</li>
+              <li>Advocated for students to access available resources.</li>
+              <li>Provided resources to support students in achieving career goals.</li>
+              <li>Empowered students through counselling and skill-building exercises.</li>
+              <li>Advised students on educational, career and social opportunities.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Petsmart Charities -->
+        <div class="experience-box blue-version">
+          <div class="experience-summary">
+            <p>Petsmart<br>Charities</p>
+          </div>
+          <div class="experience-details">
+            <p><b>Adoption Centre · Jul 2022 - Aug 2023</b></p>
+            <ul>
+              <li>Provided leadership, guidance, and support to staff members.</li>
+              <li>Referred clients to appropriate team members, community agencies, and organizations to meet treatment needs.</li>
+              <li>Provide inquiry services for interested customers and promote the adoption of homeless pets.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </body>
+
+
+</html>
